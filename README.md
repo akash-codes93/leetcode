@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/akash-codes93/leetocde/blob/master/LICENSE)
 ![Leetcode solutions](https://badgen.net/badge/Leetcode/solutions/orange?icon=leetcode)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fakash-codes93%2Fleetcode.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fakash-codes93%2Fleetcode?ref=badge_shield)
 
 
 ### Languages used
@@ -17,3 +18,6 @@
 <div align="center">
 <sub>Curated to clear self doubts. ❤️</sub>
 </div>
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fakash-codes93%2Fleetcode.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fakash-codes93%2Fleetcode?ref=badge_large)
