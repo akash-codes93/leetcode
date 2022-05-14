@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/akash-codes93/leetocde/blob/master/LICENSE)
 ![Leetcode solutions](https://badgen.net/badge/Leetcode/solutions/orange?icon=leetcode)
-
+![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fakash-codes93%2Fleetcode.svg?type=shield)
 
 ### Languages used
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
