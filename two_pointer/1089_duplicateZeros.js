@@ -74,6 +74,7 @@ let duplicateZeros = function (arr) {
         i -= 1
         j -= 1
     }
+    return arr
 }
 
 
