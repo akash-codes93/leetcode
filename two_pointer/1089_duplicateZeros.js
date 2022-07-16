@@ -79,6 +79,6 @@ let duplicateZeros = function (arr) {
 
 
 o = duplicateZeros([1, 0, 2, 3, 0, 4, 5, 0, 1, 2])
-// o = duplicateZeros([1, 2, 3])
+// o = duplicateZeros([1, 0 ,2, 3])
 console.log(o)
 
