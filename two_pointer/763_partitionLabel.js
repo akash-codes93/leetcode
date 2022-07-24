@@ -39,5 +39,6 @@ var partitionLabels = function (s) {
 
 }
 
+o = partitionLabels("ababcbacadefegdehijhklij")
 o = partitionLabels("eccbbbbdec")
 console.log(o)
