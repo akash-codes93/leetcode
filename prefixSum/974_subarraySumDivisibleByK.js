@@ -32,6 +32,6 @@ let subarraysDivByK = function(nums, k) {
 };
 
 // o = subarraysDivByK(nums = [4,5,0,-2,-3,1], k = 5)
-// o = subarraysDivByK(nums = [5], k = 9)
-o = subarraysDivByK([-1,2,9], 2)
+o = subarraysDivByK(nums = [5], k = 9)
+// o = subarraysDivByK([-1,2,9], 2)
 console.log(o)

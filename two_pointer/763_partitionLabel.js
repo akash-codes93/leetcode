@@ -16,6 +16,7 @@ var partitionLabels = function (s) {
             dict[letter] = i
         }
     }
+    console.log(dict)
     var output = []
     var size = 0
     var end = 0

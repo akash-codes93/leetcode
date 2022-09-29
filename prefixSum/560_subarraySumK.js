@@ -25,5 +25,6 @@ let subarraySum = function(nums, k) {
     return nice
 };
 
-o = subarraySum(nums = [1,2,3], k = 3)
+// o = subarraySum(nums = [1,2,3,4,5], k = 10)
+o = subarraySum(nums = [3,2,1,4,5,0,2], k = 5)
 console.log(o);
