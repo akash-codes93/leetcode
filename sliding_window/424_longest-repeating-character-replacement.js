@@ -47,13 +47,11 @@ let characterReplacement = function (s, k) {
                     l++;
                     r++;
                 }
-
             }
 
             if (current_len > max_len) {
                 max_len = current_len
             }
-
         }
 
         if (max_len > total_max_len) {
