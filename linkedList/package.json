@@ -1,0 +1,22 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "This repository contains solution to Leetcode",
+  "main": "base.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akash-codes93/leetcode.git"
+  },
+  "keywords": [
+    "leetcode"
+  ],
+  "author": "Akash Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akash-codes93/leetcode/issues"
+  },
+  "homepage": "https://github.com/akash-codes93/leetcode#readme"
+}
