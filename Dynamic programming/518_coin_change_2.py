@@ -3,7 +3,7 @@ https://leetcode.com/problems/coin-change-ii/description/
 
 unbounded kanpsack
 
-repetiting subproblem
+repeatiting subproblem
 optimal substructure
 
 

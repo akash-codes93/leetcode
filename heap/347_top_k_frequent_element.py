@@ -1,5 +1,11 @@
 """
 https://leetcode.com/problems/top-k-frequent-elements/
+
+below solution using max heap
+
+but can be done using min heap (k smallest pair)
+check leetcode for solution.
+
 """
 import math
 
@@ -29,7 +35,7 @@ def max_heapify(arr, i, heap_size):
 
 
 def build_heap(arr):
-    for i in range(math.floor(len(arr)) - 1, -1, -1):
+    for i in range(math.floor(len(arr)/2) - 1, -1, -1):
         max_heapify(arr, i, len(arr))
 
 
