@@ -29,7 +29,6 @@ def heapify(arr, i, heap_size):
 
 
 def increase_key(arr, value):
-
     arr.append(value)
 
     i = len(arr) - 1
@@ -48,12 +47,6 @@ def build_heap(arr):
         heapify(arr, i, len(arr))
 
 
-def find_empty(arr):
-    for i in range(0, len(arr)):
-        if arr[i] == 0:
-            return i
-
-
 class Solution:
     def reorganizeString(self, s: str) -> str:
         d = {}
@@ -65,6 +58,7 @@ class Solution:
                 d[s[i]] += 1
 
         arr = []
+        print(d)
 
         for key, value in d.items():
             # print(key, value)
@@ -74,17 +68,18 @@ class Solution:
 
         ans = ""
 
-        while len(arr) > 2:
+        while len(arr) > 1:
             val1 = arr[0]
-            arr[0], arr[len(arr)-1] = arr[len(arr)-1], arr[0]
+            arr[0] = arr[-1]
             arr.pop()
             heapify(arr, 0, len(arr))
 
             val2 = arr[0]
-            arr[0], arr[len(arr) - 1] = arr[len(arr) - 1], arr[0]
+            arr[0] = arr[-1]
             arr.pop()
             heapify(arr, 0, len(arr))
 
+            print(val1.element, val2.element)
             ans += val1.element
             val1.frequency -= 1
 
@@ -99,27 +94,9 @@ class Solution:
 
         if len(arr) == 1 and arr[0].frequency > 1:
             return ""
-
-        val1 = arr[0]
-        val2 = arr[1]
-
-        while val1.frequency > 0 and val2.frequency > 0:
-            ans += val1.element
-            ans += val2.element
-
-            val1.frequency -= 1
-            val2.frequency -= 1
-
-        if val1.frequency > 1 or val2.frequency >1:
-            return ""
-
-        if val1.frequency:
-            ans += val1.element
-            val1.frequency -= 1
-
-        if val2.frequency:
-            ans += val2.element
-            val2.frequency -= 1
+        elif len(arr) == 1:
+            ans += arr[0].element
+            return ans
 
         return ans
 
@@ -128,9 +105,10 @@ class Solution:
 # p = Solution().reorganizeString("aaab")
 # p = Solution().reorganizeString("aaabbcccd")
 # p = Solution().reorganizeString("a")
-p = Solution().reorganizeString("kkkkzrkatkwpkkkktrq")
+# p = Solution().reorganizeString("kkkkzrkatkwpkkkktrq")
 # p = Solution().reorganizeString("aaaaabcdq")
 # p = Solution().reorganizeString("aabbcc")
+p = Solution().reorganizeString("bfrbs")
 print("Ans")
 print(p)
 
