@@ -5,8 +5,8 @@ build priority queue of k size. min_heap
 then extract min element, (replace with next element or last element of heap) heapify again
 until all linked list are finished.
 
-time = NlogK
-Time: O(1)
+Time = NlogK
+Space: O(1)
 
 """
 import math

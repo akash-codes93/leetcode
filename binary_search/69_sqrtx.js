@@ -1,5 +1,6 @@
 /**
  * https://leetcode.com/problems/sqrtx/
+ https://leetcode.com/problems/valid-perfect-square/
  */
 
 //let mySqrt = function (x) {
