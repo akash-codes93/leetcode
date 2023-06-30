@@ -46,7 +46,6 @@ class Solution:
             # print(_map)
             return repeat_str
 
-
         low = 1
         r = len(s)
         max_repeating_str = ""

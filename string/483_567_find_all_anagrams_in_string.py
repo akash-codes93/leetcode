@@ -22,7 +22,7 @@ class Solution:
 
         i = 0
         j = i
-        h2 = [0 ] *26
+        h2 = [0] *26
         while i <= len(s ) -k and j < len(s):
             # print(j)
             idx = ord(s[j]) - 97

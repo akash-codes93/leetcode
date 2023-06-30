@@ -58,3 +58,27 @@ class Solution:
                 out.append(nums[i])
 
         return out
+
+Solution()
+
+"""
+287
+"""
+class Solution:
+    def findDuplicate(self, nums) -> int:
+
+        # processing part
+        i = 0
+        while i < len(nums):
+
+            if nums[i] != nums[nums[i] - 1]:
+                p = nums[nums[i] - 1]
+                nums[nums[i] - 1] = nums[i]
+                nums[i] = p
+            else:
+                i += 1
+
+        # observation part
+        for i in range(0, len(nums)):
+            if nums[i] != i + 1:
+                return nums[i]

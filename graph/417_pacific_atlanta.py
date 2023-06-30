@@ -1,5 +1,5 @@
 class Solution:
-    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+    def pacificAtlantic(self, heights):
         # optimised
 
         # lets do a reverse traversal

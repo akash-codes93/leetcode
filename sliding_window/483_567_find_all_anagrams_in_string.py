@@ -6,6 +6,8 @@ one for p and other for sliding s
 if hashes match they are anagrams
 
 """
+
+
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
 
@@ -42,6 +44,7 @@ class Solution:
 
 567 is also the same code no change at all
 """
+
 
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:

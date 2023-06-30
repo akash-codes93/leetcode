@@ -29,13 +29,6 @@ class Solution:
                     j += 1
                     f += (len(arr1) - i)
                     flips[0] += (len(arr1) - i)
-                elif arr1[i] == arr2[j]:
-                    # f += (len(arr1) - i - 1)
-                    # flips[0] += (len(arr1) - i - 1)
-                    final.append(arr2[j])
-                    final.append(arr1[i])
-                    i += 1
-                    j += 1
 
             while i < len(arr1):
                 final.append(arr1[i])

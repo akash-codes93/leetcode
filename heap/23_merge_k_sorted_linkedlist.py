@@ -54,7 +54,7 @@ class Solution:
                 arr.append(lists[i])
 
         build_heap(arr)
-        temp = None
+        prev = None
         head = None
 
         while arr:
@@ -62,13 +62,13 @@ class Solution:
             node = arr[0]
             if head is None:
                 head = node
-                temp = node
+                prev = node
             else:
-                temp.next = node
-                temp = node
+                prev.next = node
+                prev = node
 
-            if temp.next:
-                arr[0] = temp.next
+            if prev.next:
+                arr[0] = prev.next
             else:
                 arr[0] = arr[-1]
                 arr.pop()

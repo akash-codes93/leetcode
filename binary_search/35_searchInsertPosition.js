@@ -36,6 +36,14 @@ let searchInsert = function (nums, target) {
     }
 };
 
+/**
+# python solution
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        return bisect.bisect_left(nums, target)
+
+**/
+
 console.log(searchInsert([1, 3, 8, 15, 67], 50))
 console.log(searchInsert([1, 3, 8, 15, 67], 15))
 console.log(searchInsert([1, 3, 8, 15, 67], 10))
