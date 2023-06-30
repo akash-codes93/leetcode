@@ -13,13 +13,12 @@ class Node:
         self.x = x
         self.y = y
 
-        self.d = x*x + y*y
+        self.d = x * x + y * y
 
 
 def max_heapify(arr, i, heap_size):
-
-    left = 2*i + 1
-    right = 2*i + 2
+    left = 2 * i + 1
+    right = 2 * i + 2
 
     largest = i
     if left < heap_size and arr[left].d > arr[largest].d:
@@ -38,7 +37,7 @@ def perculate_up(arr, node):
     i = len(arr) - 1
 
     while i > 0:
-        parent = math.ceil(i/2) - 1
+        parent = math.ceil(i / 2) - 1
 
         if arr[parent].d > arr[i].d:
             break
@@ -95,12 +94,16 @@ class Solution:
         def quick_select(l, r, k):
             if l >= r:
                 return
-
             idx = get_partition(arr, l, r)
-            if k < idx - l + 1:
+            print(l, r, idx, k)
+            if (k + l) < idx + 1:
                 quick_select(l, idx - 1, k)
-            elif k > idx - l + 1:
-                quick_select(idx + 1, r, k - (idx - l + 1))
+            elif (k + l) > idx + 1:
+                quick_select(idx + 1, r, (k + l) - (idx + 1))  # idx + 1 is the new l  || k is actually the distance from l -> so actual position of k is (k+l)
 
         quick_select(0, len(arr) - 1, k)
         return [[arr[i].x, arr[i].y] for i in range(0, k)]
+
+
+p = Solution().kClosest([[6, 10], [-3, 3], [-2, 5], [0, 2]], 3)
+print(p)
