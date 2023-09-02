@@ -51,7 +51,7 @@ def perculate_up(arr, num):
         i = parent
 
 
-class Solution:
+class SolutionHeap:
     def maxSlidingWindow(self, nums, k: int):
 
         ans = []
@@ -59,7 +59,7 @@ class Solution:
         for i in range(0, len(nums)):
             perculate_up(arr, Node(nums[i], i))
 
-            if i >= (k-1):
+            if i >= (k - 1):
                 while arr[0].idx < (i - k + 1):
                     arr[0], arr[len(arr) - 1] = arr[len(arr) - 1], arr[0]
                     arr.pop()
@@ -68,6 +68,38 @@ class Solution:
         return ans
 
 
-# a = Solution().maxSlidingWindow([1,3,-1,-3,5], 3)
-a = Solution().maxSlidingWindow([9,10,9,-7,-4,-8,2,-6], 5)
+from collections import deque
+
+
+class Solution:
+    def maxSlidingWindow(self, nums, k: int):
+
+        ans = []
+        arr = []
+
+        queue = deque()
+
+        def insert_into_queue(elem):
+
+            while queue and queue[-1].val <= elem.val:
+                queue.pop()
+
+            queue.append(elem)
+
+        ans = []
+        for idx, val in enumerate(nums):
+            node = Node(val, idx)
+
+            insert_into_queue(node)
+
+            if idx >= k - 1:
+                while queue and queue[0].idx < (idx - (k - 1)):
+                    queue.popleft()
+
+                ans.append(queue[0].val)
+
+        return ans
+
+
+a = Solution().maxSlidingWindow([9, 10, 9, -7, -4, -8, 2, -6], 3)
 print(a)

@@ -13,7 +13,7 @@ class Node:
 
 
 class Solution:
-    def calculateMinimumHP(self, dungeon: List[List[int]]) -> int:
+    def calculateMinimumHP(self, dungeon) -> int:
 
         dp = [[0] * len(dungeon[0]) for _ in range(0, len(dungeon))]
 
@@ -24,42 +24,36 @@ class Solution:
                     dp[i][j] = Node(dungeon[i][j], dungeon[i][j])
 
                 elif i == 0:
-                    dp[i][j] = Node(dp[i][j-1].sum + dungeon[i][j],
-                                    min(dp[i][j-1].min, dungeon[i][j])
+                    dp[i][j] = Node(dp[i][j - 1].sum + dungeon[i][j],
+                                    min(dp[i][j - 1].min, dungeon[i][j])
                                     )
 
                 elif j == 0:
-                    dp[i][j] = Node(dp[i-1][j].sum + dungeon[i][j],
-                                    min(dp[i-1][j].min, dungeon[i][j])
+                    dp[i][j] = Node(dp[i - 1][j].sum + dungeon[i][j],
+                                    min(dp[i - 1][j].min, dungeon[i][j])
                                     )
                 else:
 
-                    n1 = Node(dp[i][j-1].sum + dungeon[i][j],
-                                    min(dp[i][j-1].min, dungeon[i][j])
-                                    )
-                    n2 = Node(dp[i-1][j].sum + dungeon[i][j],
-                                    min(dp[i-1][j].min, dungeon[i][j])
-                                    )
+                    n1 = Node(dp[i][j - 1].sum + dungeon[i][j],
+                              min(dp[i][j - 1].min, dungeon[i][j])
+                              )
+                    n2 = Node(dp[i - 1][j].sum + dungeon[i][j],
+                              min(dp[i - 1][j].min, dungeon[i][j])
+                              )
 
                     n1val = min(n1.sum, n1.val)
                     n2val = min(n2.sum, n2.val)
 
-
                     if n1val < 0 and n2val < 0:
                         if n1val < n2val:
-                            dp[i][j] =  n2
+                            dp[i][j] = n2
                         else:
                             dp[i][j] = n1
                     else:
                         if n1val < n2val:
-                            dp[i][j] =  n1
+                            dp[i][j] = n1
                         else:
                             dp[i][j] = n2
 
         print(dp)
         return dp[-1][-1]
-
-
-
-
-
