@@ -4,7 +4,7 @@
 
 
 class Solution:
-    def jump(self, nums: List[int]) -> int:
+    def jump(self, nums) -> int:
 
         # dp = [float('inf')] * len(nums)
         # dp[0] = 0
