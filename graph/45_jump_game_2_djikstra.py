@@ -1,8 +1,3 @@
-"""
-
-"""
-
-
 class Solution:
     def jump(self, nums) -> int:
 
@@ -37,7 +32,6 @@ class Solution:
         # return min_time
 
         # optimised greedy
-
         res = 0
         l = r = 0
         while r < len(nums) - 1:

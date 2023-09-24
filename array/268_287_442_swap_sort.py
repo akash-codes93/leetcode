@@ -38,7 +38,6 @@ a = Solution().missingNumber([3, 0, 1])
 
 class Solution:
     def findDuplicates(self, nums):
-
         out = []
 
         # processing part
@@ -59,12 +58,14 @@ class Solution:
 
         return out
 
-Solution()
 
 """
-287
+287: O(n) but array is changed
 """
+
+
 class Solution:
+
     def findDuplicate(self, nums) -> int:
 
         # processing part

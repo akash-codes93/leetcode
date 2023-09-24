@@ -1,6 +1,8 @@
 """
 https://leetcode.com/problems/word-search-ii/
 """
+from typing import List
+from collections import defaultdict
 
 
 class Node:
@@ -49,8 +51,8 @@ class Trie:
         return False
 
 
-class Solution:
-    def findWords(self, board: List[List[str]], wordDict: List[str]) -> List[str]:
+class SolutionA:
+    def findWords(self, board, wordDict):
 
         m = len(board)
         n = len(board[0])
@@ -113,8 +115,8 @@ Reverse check this is also not working
 
 """
 
-class Solution:
-    def findWords(self, board: List[List[str]], wordDict: List[str]) -> List[str]:
+class SolutionB:
+    def findWords(self, board, wordDict):
 
         m = len(board)
         n = len(board[0])
@@ -179,7 +181,7 @@ TLE below code also
 """
 
 
-class Solution:
+class SolutionC:
     def findWords(self, board: List[List[str]], wordDict: List[str]) -> List[str]:
 
         m = len(board)
