@@ -2,6 +2,7 @@
 extended moore algorithm
 https://leetcode.com/problems/majority-element-ii/
 """
+from typing import List
 
 
 class Solution:
@@ -48,6 +49,62 @@ class Solution:
                 output.append(num2)
 
         return output
+
+
+class Solution:
+    def isMonotonic(self, nums: List[int]) -> bool:
+        if len(nums) == 1:
+            return True
+
+        i = i
+        found = True
+        # monotonic increasing
+        while i < len(nums):
+            if nums[i] <= nums[i-1]:
+                found = False
+            i += 1
+
+        if found:
+            return True
+
+        found = True
+        while i < len(nums):
+            if nums[i] >= nums[i-1]:
+                found = False
+            i += 1
+        if found:
+            return True
+
+        return False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
