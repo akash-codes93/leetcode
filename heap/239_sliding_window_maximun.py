@@ -70,32 +70,24 @@ class SolutionHeap:
 
 from collections import deque
 
-
 class Solution:
     def maxSlidingWindow(self, nums, k: int):
-
         ans = []
         arr = []
-
         queue = deque()
 
         def insert_into_queue(elem):
-
             while queue and queue[-1].val <= elem.val:
                 queue.pop()
-
             queue.append(elem)
 
         ans = []
         for idx, val in enumerate(nums):
             node = Node(val, idx)
-
             insert_into_queue(node)
-
             if idx >= k - 1:
                 while queue and queue[0].idx < (idx - (k - 1)):
                     queue.popleft()
-
                 ans.append(queue[0].val)
 
         return ans
