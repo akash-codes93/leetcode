@@ -58,7 +58,6 @@ class Solution:
                 each_node.st = max(each_node.st, node.en)
                 if zero_in_deg(each_node_val):
                     queue.append(each_node)
-
         print(time)
         return time
 
