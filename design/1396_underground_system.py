@@ -1,13 +1,13 @@
 class Trip:
 
-    def __init__(self, _id, s_station, starttime, e_station =None, endtime=None):
-
+    def __init__(self, _id, s_station, starttime, e_station=None, endtime=None):
         self.id = _id
         self.s_station = s_station
         self.starttime = starttime
 
         self.e_station = e_station
         self.endtime = endtime
+
 
 class StationAverage:
     def __init__(self, total_time, size):
@@ -46,12 +46,9 @@ class UndergroundSystem:
                 destination.total_time += (node.endtime - node.starttime)
                 destination.size += 1
 
-
     def getAverageTime(self, startStation: str, endStation: str) -> float:
         node = self.average_distance_map[startStation][endStation]
-        return node.total_time/ node.size
-
-
+        return node.total_time / node.size
 
 # Your UndergroundSystem object will be instantiated and called as such:
 # obj = UndergroundSystem()

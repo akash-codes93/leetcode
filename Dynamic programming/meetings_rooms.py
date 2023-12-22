@@ -78,7 +78,107 @@ def min_meeting_rooms(meetings) -> int:
 
 
 # meeting_rooms([(30, 75), (0, 50), (60, 150)])
-min_meeting_rooms([(30, 75), (0, 50), (60, 150)])
-min_meeting_rooms([(1, 18), (18, 23), (15, 29), (5, 14), (2, 11), (5, 13)])
+# min_meeting_rooms([(30, 75), (0, 50), (60, 150)])
+# min_meeting_rooms([(1, 18), (18, 23), (15, 29), (5, 14), (2, 11), (5, 13)])
 
 # 8904242424
+
+
+import sys
+
+ENTER = "enter"
+EXIT = "exit"
+
+
+def get_busiest_slot(events):
+    ts_entries, ts_exits = dict(), dict()
+    max_time, min_time = -sys.maxsize, sys.maxsize
+
+    for event in events:
+        ts_dict = None
+        timestamp = event["timestamp"]
+        if event["type"] == ENTER:
+            ts_dict = ts_entries
+        else:
+            ts_dict = ts_exits
+
+        ts_dict[timestamp] = event["count"]
+        if timestamp < min_time:
+            min_time = timestamp
+        elif timestamp > max_time:
+            max_time = timestamp
+
+    people_inside = 0
+    max_people_inside = 0
+    start_time, end_time = None, None
+    for timestamp in range(min_time, max_time + 1):
+        if timestamp in ts_entries:
+            people_inside += ts_entries[timestamp]
+            if people_inside > max_people_inside:
+                max_people_inside = people_inside
+                start_time = timestamp
+        if timestamp in ts_exits:
+            if people_inside == max_people_inside:
+                end_time = timestamp
+            people_inside -= ts_exits[timestamp]
+
+    return (start_time, end_time)
+
+
+def simple_sort_solution(events):
+
+    count = 0
+    start_time = None
+    end_time = None
+    max_people = 0
+
+    for event in events:
+        if event["type"] == "enter":
+            count += event["count"]
+            if count > max_people:
+                start_time = event["timestamp"]
+                max_people = count
+        else:
+            if count == max_people:
+                end_time = event["timestamp"]
+            count -= event["count"]
+
+    return (start_time, end_time)
+
+
+
+
+
+y=simple_sort_solution([{"timestamp": 1, "count": 10, "type": "enter"},
+{"timestamp": 3, "count": 2, "type": "exit"},
+{"timestamp": 5, "count": 1, "type": "enter"},
+{"timestamp": 6, "count": 1, "type": "enter"},
+{"timestamp": 7, "count": 1, "type": "enter"},
+{"timestamp": 9, "count": 3, "type": "exit"},
+{"timestamp": 10, "count": 8, "type": "exit"}])
+print(y)
+
+
+def consecutive_ones(n):
+
+    max_count = 0
+    count = 0
+
+    while n > 0:
+        print(n, n & 1)
+        if n & 1 == 1:
+            count += 1
+        else:
+            count = 0
+
+        print(count)
+        max_count = max(count, max_count)
+        print(max_count)
+
+        n >>= 1
+
+    return max_count
+
+
+print("Ans: ", consecutive_ones(156))
+print("Ans: ", consecutive_ones(3))

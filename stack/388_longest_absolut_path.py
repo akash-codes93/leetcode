@@ -14,7 +14,6 @@ class Solution:
     def lengthLongestPath(self, input: str) -> int:
 
         # stack
-
         file_dir = input.split('\n')
         stack = []
         max_size = 0
