@@ -77,7 +77,6 @@ class Solution:
                         heapify(arr, 0, len(arr))
         ans = []
         while arr:
-
             ans.append([arr[0].var1, arr[0].var2])
             arr[0], arr[len(arr)-1] = arr[len(arr)-1], arr[0]
             arr.pop()
