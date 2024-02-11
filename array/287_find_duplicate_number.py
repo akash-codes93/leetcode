@@ -32,7 +32,6 @@ class SolutionSwapSort:
 
 # you can also use binary search since elements are bw [1, n]
 """
-
 According to the Pigeon hole Principle, n+1 integers, placed in an array of length n, at least 1 integer will be repeated.
 
 So guess a number first(the number mid in the valid range [left,right]), count the elements of the array which is less 

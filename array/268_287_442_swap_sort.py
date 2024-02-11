@@ -64,7 +64,7 @@ class Solution:
 """
 
 
-class Solution:
+class SolutionDuplicate:
 
     def findDuplicate(self, nums) -> int:
 
@@ -78,8 +78,13 @@ class Solution:
                 nums[i] = p
             else:
                 i += 1
-
+        # what does the array looks like after swap sort
+        print(nums)
         # observation part
         for i in range(0, len(nums)):
             if nums[i] != i + 1:
                 return nums[i]
+
+
+if __name__ == '__main__':
+    SolutionDuplicate().findDuplicate([2, 3, 1, 5, 1])

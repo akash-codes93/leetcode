@@ -50,7 +50,6 @@ func (tr *Trie) insert(word string, score int) {
 		t = node
 		i += 1
 	}
-
 }
 
 func sumAll(node *Node) int {
@@ -65,9 +64,7 @@ func sumAll(node *Node) int {
 			score += sumAll(node.nextChars[i])
 		}
 	}
-
 	return score
-
 }
 
 func (tr *Trie) sum(word string) int {
@@ -86,9 +83,7 @@ func (tr *Trie) sum(word string) int {
 		t = node
 		i += 1
 	}
-
 	return sumAll(t)
-
 }
 
 type MapSum struct {
@@ -116,9 +111,7 @@ func Constructor() MapSum {
 	mapSum := MapSum{
 		trie: &trie,
 	}
-
 	return mapSum
-
 }
 
 func (this *MapSum) Insert(key string, val int) {
