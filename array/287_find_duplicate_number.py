@@ -66,11 +66,4 @@ class Solution:
 
         return lt
 
-
 # tortoise hare method detection
-
-
-
-
-
-

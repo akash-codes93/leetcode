@@ -36,8 +36,7 @@ def min_heapify(arr, i, heap_size):
 
 
 def build_heap(arr):
-
-    for i in range(math.floor(len(arr)/2), -1, -1):
+    for i in range(math.floor(len(arr) / 2), -1, -1):
         min_heapify(arr, i, len(arr))
 
 

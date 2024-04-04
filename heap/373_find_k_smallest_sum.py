@@ -71,6 +71,7 @@ class Solution:
                     perculate_up(arr, Node(nums1[i], nums2[j], nums1[i]+nums2[j]))
                 else:
                     if (nums1[i] + nums2[j]) > arr[0].sum:
+                        # because nums1 and nums2 are sorted
                         break
                     else:
                         arr[0] = Node(nums1[i], nums2[j], nums1[i]+nums2[j])
