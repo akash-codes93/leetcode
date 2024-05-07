@@ -3,6 +3,8 @@ https://leetcode.com/problems/substring-with-concatenation-of-all-words/descript
 calculate total length of words and extract substring of that length
 in each substring extract words of size words[0] check if they exists and frequency array and frequency is also same.
 
+Not the optimised solution
+
 """
 import copy
 from collections import defaultdict, Counter
